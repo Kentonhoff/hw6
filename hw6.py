@@ -2,6 +2,19 @@ import re
 import unittest
 
 def sumNums(fileName):
+    hand = open(fileName)
+    totalsum = 0
+    for line in hand:
+        line = line.rstrip()
+        nums = re.findall('[0-9]+', line)
+
+
+
+        for num in nums:
+            totalsum += int(num)
+    hand.close()
+    return totalsum
+
     pass
 
 def countWord(fileName, word):
