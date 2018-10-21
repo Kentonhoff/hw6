@@ -8,8 +8,6 @@ def sumNums(fileName):
         line = line.rstrip()
         nums = re.findall('[0-9]+', line)
 
-
-
         for num in nums:
             totalsum += int(num)
     hand.close()
@@ -23,20 +21,33 @@ def countWord(fileName, word):
     wordcount = 0
     for line in hand:
         line = line.rstrip()
-        #print(line)
+
         lstofwords = re.findall(r"\b[A-Z]?[a-z]+\b", line)
-        #print(lstofwords)
+
         for wrd in lstofwords:
             if wrd.lower() == text:
                 wordcount +=1
             else:
                 wordcount = wordcount
     hand.close()
+
     return wordcount
 
     pass
 
 def listURLs(fileName):
+    hand = open(fileName)
+
+    lstURL = []
+    for line in hand:
+        line = line.rstrip()
+        URLS = re.findall(r"\S+\.\S+\.\w+", line)
+        for Url in URLS:
+            lstURL.append(Url)
+    hand.close()
+
+    return lstURL
+
     pass
 
 
