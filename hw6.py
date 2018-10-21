@@ -18,6 +18,22 @@ def sumNums(fileName):
     pass
 
 def countWord(fileName, word):
+    text = word
+    hand = open(fileName)
+    wordcount = 0
+    for line in hand:
+        line = line.rstrip()
+        #print(line)
+        lstofwords = re.findall(r"\b[A-Z]?[a-z]+\b", line)
+        #print(lstofwords)
+        for wrd in lstofwords:
+            if wrd.lower() == text:
+                wordcount +=1
+            else:
+                wordcount = wordcount
+    hand.close()
+    return wordcount
+
     pass
 
 def listURLs(fileName):
