@@ -50,7 +50,6 @@ def listURLs(fileName):
 
     pass
 
-
 class TestHW6(unittest.TestCase):
     """ Class to test this homework """
 
